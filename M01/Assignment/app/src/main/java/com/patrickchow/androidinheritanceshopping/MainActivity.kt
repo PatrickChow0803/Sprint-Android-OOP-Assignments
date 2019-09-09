@@ -16,19 +16,19 @@ class MainActivity : AppCompatActivity() {
     fun createFakeData(): MutableList<ShoppingItem>{
         var listOfProducts = mutableListOf<ShoppingItem>()
 
-        listOfProducts.add(grocery(512, "pie", "food"))
+        listOfProducts.add(grocery(512, "Pie", "food"))
         listOfProducts.add(clothing(666, "Polo Shirt", "Fabric"))
         listOfProducts.add(toy(999, "Batman Figure", "Plastic"))
 
-        listOfProducts.add(grocery(512, "pie", "food"))
+        listOfProducts.add(grocery(512, "Pie", "food"))
         listOfProducts.add(clothing(666, "Polo Shirt", "Fabric"))
         listOfProducts.add(toy(999, "Batman Figure", "Plastic"))
 
-        listOfProducts.add(grocery(512, "pie", "food"))
+        listOfProducts.add(grocery(512, "Pie", "food"))
         listOfProducts.add(clothing(666, "Polo Shirt", "Fabric"))
         listOfProducts.add(toy(999, "Batman Figure", "Plastic"))
 
-        listOfProducts.add(grocery(512, "pie", "food"))
+        listOfProducts.add(grocery(512, "Pie", "food"))
         listOfProducts.add(clothing(666, "Polo Shirt", "Fabric"))
         listOfProducts.add(toy(999, "Batman Figure", "Plastic"))
 
