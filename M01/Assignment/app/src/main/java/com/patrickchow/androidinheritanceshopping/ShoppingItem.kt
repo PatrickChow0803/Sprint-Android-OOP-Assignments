@@ -7,3 +7,15 @@ open class ShoppingItem(val colorId: Int, val product: String){
     }
 
 }
+
+class grocery(colorId: Int, product: String, type: String):ShoppingItem(colorId, product){
+
+}
+
+class clothing(colorId: Int, product: String, type: String):ShoppingItem(colorId, product){
+
+}
+
+class toy(colorId: Int, product: String, type: String): ShoppingItem(colorId, product){
+    
+}
