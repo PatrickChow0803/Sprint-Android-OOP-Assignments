@@ -1,9 +1,9 @@
 package com.patrickchow.interfaceassignment.model
 
 abstract class Vehicle {
-    var id: String? = null
-    var weight: String? = null
-    var favorite: Boolean? = null
+    open var id: String? = null
+    open var weight: String? = null
+    open var favorite: Boolean? = null
 
     abstract fun fly(): String
 }
