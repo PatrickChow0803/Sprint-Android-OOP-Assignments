@@ -6,54 +6,60 @@ import com.patrickchow.interfaceassignment.model.Vehicle
 import com.patrickchow.interfaceassignment.model.WaterTravel
 
 
-class Boat(var name: String):Vehicle(), WaterTravel{
-    override fun fly(): String {
-        return "$name travels by sea"
+class Plane(id: String, weight: Int, favorite:Boolean):Vehicle(id, weight, favorite), AirTravel{
+    override fun fly(): String{
+        return "$id travels by flying"
+    }
+    override fun travel(): String {
+        return fly()
+    }
+}
+
+class Car(id: String, weight: Int, favorite:Boolean):Vehicle(id, weight, favorite), GroundTravel{
+    override fun travel(): String {
+        return drive()
+    }
+
+    override fun drive(): String {
+        return "$id travels using gas"
+    }
+}
+
+class Bus(id: String, weight: Int, favorite:Boolean):Vehicle(id, weight, favorite), GroundTravel{
+    override fun travel(): String {
+        return drive()
+    }
+
+    override fun drive(): String {
+        return "$id travels using gas"
+    }
+}
+
+class Train(id: String, weight: Int, favorite:Boolean):Vehicle(id, weight, favorite), GroundTravel{
+    override fun travel(): String {
+        return drive()
+    }
+
+    override fun drive(): String {
+        return "travels by ground"
+    }
+}
+
+class Helicopter(id: String, weight: Int, favorite:Boolean):Vehicle(id, weight, favorite), AirTravel{
+    override fun fly(): String{
+        return "$id travels by air"
+    }
+    override fun travel(): String {
+        return fly()
+    }
+}
+
+class Boat(id: String, weight:Int, favorite:Boolean):Vehicle(id, weight, favorite), WaterTravel{
+    override fun travel(): String {
+        return sail()
     }
 
     override fun sail():String {
-        return "$name doesn't travel by air but by sea"
-    }
-}
-
-class Plane(var name: String):Vehicle(), AirTravel{
-    override fun fly(): String{
-        return "$name travels by air"
-    }
-}
-
-class Car(var name: String):Vehicle(), GroundTravel{
-    override fun fly(): String {
-        return "$name doesn't travel by air, but by ground"
-    }
-
-    override fun drive(): String {
-        return "$name travels by ground"
-    }
-}
-
-class Bus(var name: String):Vehicle(), GroundTravel{
-    override fun fly(): String {
-        return "$name doesn't travel by air, but by ground"
-    }
-
-    override fun drive(): String {
-        return "$name travels by ground"
-    }
-}
-
-class Train(var name: String):Vehicle(), GroundTravel{
-    override fun fly(): String {
-        return "$name doesn't travel by air, but by ground"
-    }
-
-    override fun drive(): String {
-        return "$name travels by ground"
-    }
-}
-
-class Helicopter(var name: String):Vehicle(), AirTravel{
-    override fun fly(): String{
-        return "$name travels by air"
+        return "$id travels by sea"
     }
 }
