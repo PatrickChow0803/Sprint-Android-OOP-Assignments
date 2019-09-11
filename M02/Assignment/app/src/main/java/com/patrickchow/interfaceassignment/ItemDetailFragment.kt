@@ -36,7 +36,7 @@ class ItemDetailFragment : Fragment() {
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
                 //item = VehicleArrayList.ITEM_MAP[it.getString(ARG_ITEM_ID)]
-                activity?.toolbar_layout?.title = item?.id
+                activity?.toolbar_layout?.title = item?.id.toString()
             }
         }
     }
