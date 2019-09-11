@@ -14,9 +14,16 @@ class MainActivity : AppCompatActivity() {
         //Compiler doesn't like this.
         //mutableListOfStrings.add(1)
 
-        // Task 2 - create a class and pass in an object that isn't of the expected type.
+        // Task 2 - Create a class and try to pass in an object that isn't of the expected type.
         //Compiler doesn't like this
         //testingClass("Test")
+
+        //Task 3 - Create a function and try to pass in an object that isn't of the expected type.
+        //Compiler doesn't like this
+        //testingFunction(5)
+    }
+
+    fun testingFunction(testInput: String){
     }
 }
 
