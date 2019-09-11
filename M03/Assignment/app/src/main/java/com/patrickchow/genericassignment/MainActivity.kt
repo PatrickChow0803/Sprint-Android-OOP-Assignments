@@ -28,3 +28,9 @@ class MainActivity : AppCompatActivity() {
 }
 
 class testingClass(testInput: Int)
+
+class CellularService(var serviceName: String)
+
+class Phone<T: CellularService>(
+    var serviceName: CellularService
+)
