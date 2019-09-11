@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
         actObservable.subscribe(){
             Log.i(it.name, "Actor Observable")
         }
+
+        val listOfMovies = dummyAPI.createMovieList()
+        listOfMovies.subscribe(){
+            println(it)
+        }
     }
 
     fun testingFunction(testInput: String){
@@ -52,8 +57,8 @@ class testingClass(testInput: Int)
 open class CellularService()
 
 
-class TMobile: CellularService()
-class Verizon: CellularService()
+class TMobile(val name: String = "TMobile"): CellularService()
+class Verizon(val name: String = "Verizon"): CellularService()
 
 class Phone<T: CellularService, X: CellularService>(
     var serviceName: T,
@@ -61,3 +66,35 @@ class Phone<T: CellularService, X: CellularService>(
 )
 
 data class Actor(val name: String)
+
+data class Movie(
+    val yearOfRelease: String,
+    val title: String,
+    val language: String,
+    val rating: String
+)
+
+class dummyAPI {
+    companion object {
+        fun createMovieList(): Observable<List<Movie>> {
+            return Observable.just(listOf(
+                Movie("2019",
+                    "The Goldfinch",
+                    "English",
+                    "42"),
+                Movie("2019",
+                    "Hustlers",
+                    "English",
+                    "82"),
+                Movie("2019",
+                    "The Sound of Silence",
+                    "English",
+                    "63"),
+                Movie("2019",
+                    "Monos",
+                    "English",
+                    "79")
+            ))
+        }
+    }
+}
