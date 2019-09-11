@@ -2,6 +2,8 @@ package com.patrickchow.genericassignment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import io.reactivex.Observable
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +23,24 @@ class MainActivity : AppCompatActivity() {
         //Task 3 - Create a function and try to pass in an object that isn't of the expected type.
         //Compiler doesn't like this
         //testingFunction(5)
+
+        val tMobile = TMobile()
+        val verizon = Verizon()
+
+        val phone = Phone(tMobile, verizon)
+
+        val myObservable = Observable.just(5,6,1)
+        myObservable.subscribe(){
+            Log.i(it.toString(), "Observable")
+        }
+
+        val tomC = Actor("Tom Cruise")
+        val bradP = Actor("Brad Pit")
+
+        val actObservable = Observable.just(tomC, bradP)
+        actObservable.subscribe(){
+            Log.i(it.name, "Actor Observable")
+        }
     }
 
     fun testingFunction(testInput: String){
@@ -29,8 +49,15 @@ class MainActivity : AppCompatActivity() {
 
 class testingClass(testInput: Int)
 
-class CellularService(var serviceName: String)
+open class CellularService()
 
-class Phone<T: CellularService>(
-    var serviceName: CellularService
+
+class TMobile: CellularService()
+class Verizon: CellularService()
+
+class Phone<T: CellularService, X: CellularService>(
+    var serviceName: T,
+    var secondServiceName: X
 )
+
+data class Actor(val name: String)
