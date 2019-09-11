@@ -41,7 +41,7 @@ class Train(id: String, weight: Int, favorite:Boolean):Vehicle(id, weight, favor
     }
 
     override fun drive(): String {
-        return "travels by ground"
+        return "$id ravels by ground"
     }
 }
 
