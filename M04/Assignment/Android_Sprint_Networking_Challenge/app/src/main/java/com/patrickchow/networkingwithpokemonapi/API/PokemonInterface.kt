@@ -1,4 +1,4 @@
-package com.patrickchow.networkingwithpokemonapi
+package com.patrickchow.networkingwithpokemonapi.API
 
 import com.google.gson.GsonBuilder
 import com.patrickchow.networkingwithpokemonapi.Model.Pokemon
@@ -16,7 +16,7 @@ interface PokemonInterface {
         companion object{
             val BASE_URL: String = "https://pokeapi.co/api/v2/"
 
-            fun create(): PokemonInterface{
+            fun create(): PokemonInterface {
                 val gson = GsonBuilder()
                     .setLenient()
                     .create()

@@ -1,8 +1,9 @@
-package com.patrickchow.networkingwithpokemonapi
+package com.patrickchow.networkingwithpokemonapi.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.patrickchow.networkingwithpokemonapi.Model.SerializedPokemon
+import com.patrickchow.networkingwithpokemonapi.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details.*
 

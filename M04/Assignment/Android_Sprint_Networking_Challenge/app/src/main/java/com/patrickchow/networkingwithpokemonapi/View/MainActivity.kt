@@ -1,4 +1,4 @@
-package com.patrickchow.networkingwithpokemonapi
+package com.patrickchow.networkingwithpokemonapi.View
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import com.patrickchow.networkingwithpokemonapi.Model.Pokemon
 import com.patrickchow.networkingwithpokemonapi.Model.SerializedPokemon
+import com.patrickchow.networkingwithpokemonapi.API.PokemonInterface
+import com.patrickchow.networkingwithpokemonapi.R
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.*
 
@@ -86,7 +88,8 @@ class MainActivity : AppCompatActivity(), Callback<Pokemon>{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        pokemonService = PokemonInterface.create()
+        pokemonService =
+            PokemonInterface.create()
 
         btn_test.setOnClickListener {
             getPokemonByNameOrId(et_pokemon_name_or_id.text.toString())
