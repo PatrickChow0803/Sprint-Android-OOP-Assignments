@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+//Adds kapt to the compilar so I can use annotations such as @Bindable
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -20,6 +23,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    //Enables data binding
+    dataBinding{
+        enabled = true
     }
 }
 
@@ -39,4 +46,7 @@ dependencies {
     //implementation 'com.squareup.okhttp3:okhttp:4.1.0'
     //implementation 'com.squareup.okhttp3:logging-interceptor:4.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //For data binding
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
 }
